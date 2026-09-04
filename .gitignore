@@ -1,0 +1,7 @@
+.venv
+__pycache__
+*.pyc
+.env
+data/traces.jsonl
+evaluation/results
+evaluation/run_eval_*.csv

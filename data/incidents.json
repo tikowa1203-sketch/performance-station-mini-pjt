@@ -1,0 +1,26 @@
+[
+  {
+    "id": "PERF-INC-001",
+    "service": "payment-api",
+    "symptoms": ["TPS 360부터 정체", "WAS CPU 45%", "DB Pool 100%"],
+    "cause": "느린 SQL로 인한 DB Connection Pool 고갈",
+    "action": "Slow SQL 인덱스 보완 후 Pool 대기시간 재측정",
+    "keywords": ["db", "connection pool", "tps 정체", "cpu 낮음"]
+  },
+  {
+    "id": "PERF-INC-002",
+    "service": "gateway",
+    "symptoms": ["복구 인스턴스 재편입 시 P95 급증", "생존 서버 CPU 하락"],
+    "cause": "Warm-up 전 L4 트래픽 재분배와 Keep-Alive 편중",
+    "action": "헬스체크 Ready 조건과 점진적 트래픽 투입 적용",
+    "keywords": ["가용성", "l4", "warm-up", "재편입"]
+  },
+  {
+    "id": "PERF-INC-003",
+    "service": "sales-support",
+    "symptoms": ["23:30 TPS 순간 상승", "기간계 응답 변동"],
+    "cause": "검증계 기간계 재기동에 따른 일시적 연결 변화",
+    "action": "재기동 이벤트를 테스트 타임라인에 표시하고 해당 구간 별도 해석",
+    "keywords": ["재기동", "기간계", "tps 상승", "환경 이벤트"]
+  }
+]
